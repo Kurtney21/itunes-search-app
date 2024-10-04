@@ -88,15 +88,15 @@ Ensure you have the following installed:
 
 3. The application will be available at http://localhost:3000.
 
-### Usage
+## Usage
    
 Once the application is running, you can use the search bar to find albums, songs, or artists. After entering your search term, the app will fetch the relevant data from the iTunes API and display the results.
 
-### License
+## License
    
 No license.
 
-### Acknowledgements
+## Acknowledgements
 
 - iTunes Search API
 - Express
