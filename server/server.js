@@ -2,6 +2,7 @@ const express = require('express'); // Importing Express framework
 const axios = require('axios'); // Importing Axios for making HTTP requests
 const cors = require('cors'); // Importing CORS middleware for handling cross-origin requests
 const jwt = require('jsonwebtoken'); // Importing JSON Web Token for authentication
+const path = require('path'); // Importing path module for file path handling
 const app = express(); // Creating an instance of the Express application
 const PORT = process.env.PORT || 5000; // Setting the port for the server
 
@@ -55,6 +56,15 @@ app.get('/search', async (req, res) => {
   } catch (error) {
     res.status(500).send('Error fetching data from iTunes API'); // Send error message on failure
   }
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// The "catchall" handler: for any request that doesn't match one above,
+// send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 // Start the server
