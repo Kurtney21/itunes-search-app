@@ -1,5 +1,5 @@
 // BASE URL for the API
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://itunes-search-app-d3r8.onrender.com';
 
 /**
  * Fetches media data from the API based on the search term and media type.

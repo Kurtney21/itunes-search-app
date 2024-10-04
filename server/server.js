@@ -54,7 +54,7 @@ app.get('/search', async (req, res) => {
     }));
     res.json(results); // Send results as JSON response
   } catch (error) {
-    res.status(500).send('Error fetching data from iTunes API'); // Send error message on failure
+    res.status(500).send('Error fetching data from iTunes API', error); // Send error message on failure
   }
 });
 
